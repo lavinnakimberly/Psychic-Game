@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<h1> Psychic Game </h1>
+		<h2 id="wins">Wins <span class="count"></span></h2>
+		<h2 id="losses">Losses <span class="count"></span></h2>
+		<h2 id="guessesLeft">Guesses Left <span class="count"></span></h2>
+		<h2 id="pick">Your Guesses So Far <span class="count"></span></h2>
+		<script>
+			// VARIABLES
+      		// ==========================================================================
+				//var comp = Math.floor(Math.random()*25);
+				//var win = 
+				//var loss = 
+				var arr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+				// for (var loop_num = 0; loop_num < arr.length; loop_num++){
+				// 	console.log(arr[loop_num])
+				// 	arr[loop_num] = prompt("Type a letter")
+				// }
+				var wins = 0
+				var losses = 0
+				var guessesLeft = 9
+				
+
+				//var compPick = (arr[comp])
+				var compPick = "b"
+				console.log(compPick)
+
+				var userPick = prompt("Type a letter")
+					console.log(userPick)
+
+//				letter === compPick
+
+//				if the computer's pick equals user's pick
+				if(compPick === userPick){
+//				user wins 
+					console.log("user wins")
+					wins = wins + 1 
+					guessesLeft = guessesLeft - 1
+				}
+				else{
+					console.log("comp wins")
+					losses = losses + 1
+					guessesLeft = guessesLeft - 1
+				}
+
+				
+
+				$("#wins .count").text(wins);
+
+				$("#losses .count").text(losses);
+
+				$("#guessesLeft .count").text(guessesLeft);
+
+				
+				
+
+
+
+
+
+				//for (var loop_num = 0; loop_num < arr.length; loop_num++)
+
+
+
+
+				//console.log("play: ",choices[choice],choices[comp]);
+				//if(choice === comp){
+					//tie
+				//}
+				//else if(choice === 0){//rock
+				// 	if(comp === 1)
+				// 		win = -1;
+				// 	else
+				// 		win = 1;
+				// }
+				// else if(choice === 1){//paper
+				// 	if(comp === 0)
+				// 		win = 1;
+				// 	else
+				// 		win = -1;
+				// }
+				// else if(choice === 2){//scissors
+				// 	if(comp === 0)
+				// 		win = -1;
+				// 	else
+				// 		win = 1;
+				// }
+				// document.getElementById("wins").innerHTML = "Computer picked "+choices[comp];
+				// document.getElementById("losses").innerHTML = "Computer picked "+choices[comp];
+				// document.getElementById("left").innerHTML = "Guesses Left "+choices[comp];
+				// document.getElementById("guesses").innerHTML = "Computer picked "+choices[comp];
+				// if(win === 1)
+				// 	document.getElementById("result").innerHTML = "Player Wins";
+				// else if(win === -1)
+				// 	document.getElementById("result").innerHTML = "Computer Wins";
+				// else
+				// 	document.getElementById("result").innerHTML = "EVERYONE LOSES!!!!";
+				// console.log(win)
+			//}
+
+
+		// MAIN PROCESS
+      	// ==============================================================================
+
+      	// Capture keyboard input. 
+      	// Depending on the letter pressed it will "call" (execute) different functions.
+      	// HINT:  document.onkeyup = ...
+      
+    	//document.onkeyup = function (event){
+      	//console.log(event)
+      	//console.log(event.key)
+      	//play()
+		</script>
+	</body>
+</html>
