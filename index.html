@@ -5,11 +5,12 @@
 		 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	</head>
 	<body>
-		<h1> Psychic Game </h1>
-		<h2 id="wins">Wins <span class="count"></span></h2>
-		<h2 id="losses">Losses <span class="count"></span></h2>
-		<h2 id="guessesLeft">Guesses Left <span class="count"></span></h2>
-		<h2 id="pick">Your Guesses So Far <span class="count"></span></h2>
+		<h1> The Psychic Game </h1>
+		<h1> Guess what letter I'm thinking of </h1>
+		<h2 id="wins">Wins: <span class="count"></span></h2>
+		<h2 id="losses">Losses: <span class="count"></span></h2>
+		<h2 id="guessesLeft">Guesses Left: <span class="count"></span></h2>
+		<h2 id="pick">Your Guesses So Far: <span class="count"></span></h2>
 		<script>
 			// VARIABLES
       		// ==========================================================================
@@ -24,15 +25,17 @@
 				var wins = 0
 				var losses = 0
 				var guessesLeft = 9
+
+				var compPick = arr[Math.floor(Math.random()*25)]
+				console.log(compPick)
+				
+				document.onkeyup = function(){
+					var userPick = String.fromCharCode(event.keyCode).toLowerCase();
+					console.log(userPick);
 				
 
 				//var compPick = (arr[comp])
-				var compPick = "b"
-				console.log(compPick)
-
-				var userPick = prompt("Type a letter")
-					console.log(userPick)
-
+				
 //				letter === compPick
 
 //				if the computer's pick equals user's pick
@@ -41,6 +44,8 @@
 					console.log("user wins")
 					wins = wins + 1 
 					guessesLeft = guessesLeft - 1
+					compPick = arr[Math.floor(Math.random()*25)]
+					console.log(compPick)
 				}
 				else{
 					console.log("comp wins")
@@ -48,7 +53,12 @@
 					guessesLeft = guessesLeft - 1
 				}
 
-				
+				/*if(guessLeft === 0){
+
+				}
+				else{
+
+				}*/
 
 				$("#wins .count").text(wins);
 
@@ -56,7 +66,10 @@
 
 				$("#guessesLeft .count").text(guessesLeft);
 
-				
+				console.log(userPick)
+				$("#pick .count").append(userPick + " ");
+
+				}
 				
 
 
